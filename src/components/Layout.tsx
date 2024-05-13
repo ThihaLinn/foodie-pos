@@ -34,14 +34,12 @@ const Layout = ({ children }: prop) => {
     return (
       <>
         <BackOfficeLayout>{children}</BackOfficeLayout>
-        {console.log("BackOffice ")}
       </>
     );
   } else if (isOrder) {
     return (
       <>
         <OrderLayout>{children}</OrderLayout>
-        {console.log("Order")}
       </>
     );
   } else
