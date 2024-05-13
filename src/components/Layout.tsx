@@ -42,13 +42,7 @@ const Layout = ({ children }: prop) => {
         <OrderLayout>{children}</OrderLayout>
       </>
     );
-  } else
-    return (
-      <Box>
-        <Box>shit</Box>
-        {children}
-      </Box>
-    );
+  } else return <Box>{children}</Box>;
 };
 
 export default Layout;
