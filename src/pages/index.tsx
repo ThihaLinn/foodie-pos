@@ -1,22 +1,37 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import { Box, Typography } from "@mui/material";
-import Link from "next/link";
-import "../styles/Home.module.css"
+import Features from "@/components/Features";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Testimonials from "@/components/Testimonials";
+import { Box } from "@mui/material";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+const FoodiePOS = () => {
   return (
-    <>
-      <Typography variant="h3">Landing site</Typography>
-      <Link href={"/back-office"}>
-        <Typography variant="h6">Backoffice</Typography>
-      </Link>
-      <Link href={"/order"}>
-        <Typography variant="h6">Order</Typography>
-      </Link>
-    </>
+    <Box
+      sx={{
+        display: "flex",
+        width: "100%",
+        height: "100%",
+        minHeight: "100vh",
+        overflowY: "auto",
+        flexDirection: "column",
+      }}
+    >
+      <Header />
+      <Box
+        sx={{
+          maxWidth: { md: "100%", lg: "1280px" },
+          m: "0 auto",
+          px: { xs: "10px", md: "15px" },
+        }}
+      >
+        <Hero />
+        <Features />
+        <Testimonials />
+      </Box>
+      <Footer />
+    </Box>
   );
-}
+};
+
+export default FoodiePOS;
