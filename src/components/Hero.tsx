@@ -39,7 +39,7 @@ const Hero = () => {
               position: "relative",
             }}
           >
-            <Link href={`/order?tableId=1`}>
+            <Link href={`/order?tableId=2`}>
               <Button
                 variant="contained"
                 sx={{
