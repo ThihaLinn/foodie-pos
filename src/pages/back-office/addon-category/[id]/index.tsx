@@ -34,17 +34,18 @@ const index = () => {
 
   const originalAddonCategory = addonCategories.find((row) => row.id === id);
 
-  const { menuAddonCategories } = useAppSelector(
-    (state) => state.menuAddonCategory
+  const menuAddonCategories = useAppSelector(
+    (state) => state.menuAddonCategory?.menuAddonCategories
   );
 
   const menuAddonCategory = menuAddonCategories.filter(
     (row) => row.addOnCategoryId === id
   );
 
+
   const menus = useAppSelector((state) => state.menu.menus);
 
-  const menuIds: any = menuAddonCategory.map((row) => row.menuId);
+  const menuIds = menuAddonCategory.map((row) => row.menuId) as [];
 
   const [select, setSelect] = useState<number[]>(menuIds);
   const [addonCategory, setAddonCategory] = useState<updateAddonCateogryParms>({
@@ -68,7 +69,11 @@ const index = () => {
     }
   }, [originalAddonCategory]);
 
-  console.log(addonCategory);
+  useEffect(() => {
+    if (menuIds) {
+      setSelect(menuIds);
+    }
+  }, [menuAddonCategories]);
 
   const handleDelete = () => {
     dispatch(
