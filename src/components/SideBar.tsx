@@ -14,8 +14,7 @@ import ClassIcon from "@mui/icons-material/Class";
 import EggIcon from "@mui/icons-material/Egg";
 import TableBarIcon from "@mui/icons-material/TableBar";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import LocalMallIcon from "@mui/icons-material/LocalMall";
-
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import Link from "next/link";
 
 const SideBar = () => {
@@ -59,7 +58,7 @@ const SideBar = () => {
     {
       id: 7,
       name: "Orders",
-      icon: <LocationOnIcon />,
+      icon: <BookmarkBorderIcon />,
       to: "/back-office/order",
     },
   ];

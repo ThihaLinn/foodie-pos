@@ -28,6 +28,7 @@ import { hideSnackbar, showSnackBar } from "@/store/slice/SnackBarSlice";
 import { stat } from "fs";
 import DropZone from "./DropZone";
 import { createImageUrl } from "@/store/slice/AppSlice";
+import { File } from "buffer";
 
 interface prop {
   open: boolean;
@@ -183,7 +184,7 @@ const NewMenuDialoag = ({ open, setOpen }: prop) => {
                 <Chip
                   sx={{ mt: "3px" }}
                   label={image.name}
-                  onDelete={() => {}}
+                  onDelete={() => setImage(undefined)}
                 />
               )}
             </Box>

@@ -58,6 +58,7 @@ const NewMenuCategoryDialoag = ({ open, setOpen }: prop) => {
   let dispatch = useAppDispatch();
 
   const handleMenuCategory = () => {
+    console.log("woking");
     setOpen(false);
     dispatch(
       createMenuCategory({
@@ -134,7 +135,7 @@ const NewMenuCategoryDialoag = ({ open, setOpen }: prop) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>Cancel</Button>
-          <Button onClick={() => handleMenuCategory} variant="contained">
+          <Button onClick={() => handleMenuCategory()} variant="contained">
             Create
           </Button>
         </DialogActions>

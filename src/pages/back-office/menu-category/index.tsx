@@ -6,6 +6,8 @@ import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { hideSnackbar } from "@/store/slice/SnackBarSlice";
+import { disableMenuCategory } from "@/types/disableMenuCategory";
+import { DisableMenuCategory } from "@prisma/client";
 
 const MenuCategory = () => {
   let [open, setOpen] = useState(false);
@@ -26,6 +28,8 @@ const MenuCategory = () => {
     }, 5000);
   }, []);
 
+  console.log(menuCategories, disableMenuCategories);
+
   return (
     <>
       <NewMenuCategoryDialoag
@@ -41,6 +45,8 @@ const MenuCategory = () => {
           )
             ? true
             : false;
+
+          console.log(isDisable);
 
           return (
             <Card
