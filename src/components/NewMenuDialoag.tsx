@@ -38,7 +38,7 @@ interface prop {
 const NewMenuDialoag = ({ open, setOpen }: prop) => {
   let { selectedLocation } = useAppSelector((state) => state.app);
   const [select, setSelected] = useState<number[]>([]);
-  const [image, setImage] = useState<File>();
+  const [image, setImage] = useState<globalThis.File>();
   let [menu, setMenu] = useState<NewMenuParams>({
     name: "",
     price: 0,
