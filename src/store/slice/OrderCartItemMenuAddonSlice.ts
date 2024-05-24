@@ -20,13 +20,16 @@ export const orderCartItemMenuAddonSlice = createSlice({
     },
     addOrderCartItemMenuAddon: (
       state,
-      action: PayloadAction<OrderCartItemMenuAddon>
+      action: PayloadAction<OrderCartItemMenuAddon[]>
     ) => {
-      state.orderCartItemMenuAddon.push(action.payload);
+      action.payload.map((orderCartItemMenuAddon) =>
+        state.orderCartItemMenuAddon.push(orderCartItemMenuAddon)
+      );
     },
   },
 });
 
-export const {addOrderCartItemMenuAddon,setOrderCartItemMenuAddon} = orderCartItemMenuAddonSlice.actions;
+export const { addOrderCartItemMenuAddon, setOrderCartItemMenuAddon } =
+  orderCartItemMenuAddonSlice.actions;
 
 export default orderCartItemMenuAddonSlice.reducer;

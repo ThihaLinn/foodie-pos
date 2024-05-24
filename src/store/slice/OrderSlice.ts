@@ -50,6 +50,16 @@ export const createOrder = createAsyncThunk(
     const dataFromServer = await response.json();
     const { order, orderCartItem, orderCartItemMenu, orderCartItemMenuAddon } =
       dataFromServer;
+    console.log(
+      "Order",
+      order,
+      "OrderCartItem",
+      orderCartItem,
+      "OrderCartItemMenu",
+      orderCartItemMenu,
+      "OrderCarrtItemMenuAddon",
+      orderCartItemMenuAddon
+    );
 
     thunkApi.dispatch(setOrder(order));
     thunkApi.dispatch(addOrderCartItem(orderCartItem));

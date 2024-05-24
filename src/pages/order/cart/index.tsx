@@ -5,7 +5,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import React from "react";
 import { useRouter } from "next/router";
-import { removeCartItem } from "@/store/slice/cartItemSlice";
+import { clearCartItem, removeCartItem } from "@/store/slice/cartItemSlice";
 import OrderLayout from "@/components/OrderLayout";
 import { createOrder } from "@/store/slice/OrderSlice";
 import { showSnackBar } from "@/store/slice/SnackBarSlice";
@@ -62,6 +62,7 @@ const index = () => {
               message: "Add Order successfully",
             })
           );
+          dispatch(clearCartItem());
         },
       })
     );

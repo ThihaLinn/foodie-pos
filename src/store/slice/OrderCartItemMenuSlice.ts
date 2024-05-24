@@ -14,11 +14,19 @@ export const orderCartItemMenuSlice = createSlice({
   name: "orderCartItemMenuSlice",
   initialState,
   reducers: {
-    setOrderCartItemMenu: (state, action: PayloadAction<OrderCartItemMEnu[]>) => {
+    setOrderCartItemMenu: (
+      state,
+      action: PayloadAction<OrderCartItemMEnu[]>
+    ) => {
       state.orderCartItemMenu = action.payload;
     },
-    addOrderCartItemMenu: (state, action: PayloadAction<OrderCartItemMEnu>) => {
-      state.orderCartItemMenu.push(action.payload);
+    addOrderCartItemMenu: (
+      state,
+      action: PayloadAction<OrderCartItemMEnu[]>
+    ) => {
+      action.payload.map((orderCartItemMenu) =>
+        state.orderCartItemMenu.push(orderCartItemMenu)
+      );
     },
   },
 });

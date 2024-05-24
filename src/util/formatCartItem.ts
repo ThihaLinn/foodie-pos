@@ -34,7 +34,6 @@ export const formatCartItem = (
     );
 
     orderItems.push({
-        
       id: orderItem.itemId,
       menu: menu as Menu,
       addons,

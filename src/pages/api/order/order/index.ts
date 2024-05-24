@@ -75,6 +75,8 @@ export default async function handler(
             },
           },
         });
+
+      console.log(orderCartItemMenu);
       return res.status(200).json({
         order,
         orderCartItem: addedCartItems,
